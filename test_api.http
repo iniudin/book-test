@@ -1,0 +1,56 @@
+### Create Book
+POST localhost:8000/api/books
+Content-Type: application/json
+
+{"title": "Buku IPA","author": "Guru MI"}
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Get All Books
+GET localhost:8000/api/books
+Content-Type: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Get Book by ID
+GET localhost:8000/api/books/1
+Content-Type: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+
+
+### Update Book by ID
+PUT localhost:8000/api/books/1
+Content-Type: application/json
+
+{"title": "Buku PKN","author": "Guru MI"}
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Delete Book by ID
+DELETE localhost:8000/api/books/1
+Content-Type: application/json
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
